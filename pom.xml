@@ -1,12 +1,12 @@
 <!--
   Copyright 2013 Christian Schneider
-  
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
-  
+
     http://www.apache.org/licenses/LICENSE-2.0
-  
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -62,13 +62,13 @@
         <mainClass>org.nchadoop.Main</mainClass>
 
         <skipTests>false</skipTests>
-        <java-version>1.7</java-version>
+        <java-version>1.8</java-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <slf4j.version>1.6.4</slf4j.version>
         <logback.version>1.0.1</logback.version>
-        <hadoop.version.generic>2.0.0-cdh4.2.0</hadoop.version.generic>
-        <hadoop.version.mr1>2.0.0-mr1-cdh4.2.0</hadoop.version.mr1>
+        <hadoop.version.generic>2.6.0-cdh5.10.1</hadoop.version.generic>
+        <hadoop.version.mr1>2.6.0-cdh5.10.1</hadoop.version.mr1>
     </properties>
 
     <dependencies>
@@ -134,7 +134,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>0.12.0</version>
+            <version>1.16.20</version>
             <scope>provided</scope>
         </dependency>
 

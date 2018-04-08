@@ -1,12 +1,12 @@
 /*******************************************************************************
  * Copyright 2013 Christian Schneider
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,18 +15,16 @@
  ******************************************************************************/
 package org.nchadoop.fs;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.URI;
-
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.fs.PathFilter;
+
+import java.io.IOException;
+import java.net.URI;
 
 @Slf4j
 @Data
@@ -68,7 +66,7 @@ public class HdfsScanner
         return searchRoot;
     }
 
-    private void walkThroughDirectories(final StatusCallback callback, final SearchRoot searchRoot, final FileStatus[] listLocatedStatus) throws FileNotFoundException, IOException
+    private void walkThroughDirectories(final StatusCallback callback, final SearchRoot searchRoot, final FileStatus[] listLocatedStatus) throws IOException
     {
         for (final FileStatus fileStatus : listLocatedStatus)
         {
@@ -134,7 +132,7 @@ public class HdfsScanner
         this.interrupted = true;
     }
 
-    public static interface StatusCallback
+    public interface StatusCallback
     {
         void onVisitFile(final FileStatus next);
 
