@@ -1,12 +1,12 @@
 /*******************************************************************************
  * Copyright 2013 Christian Schneider
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,7 +15,7 @@
  ******************************************************************************/
 package org.nchadoop.fs.util;
 
-import static java.nio.file.FileVisitResult.CONTINUE;
+import lombok.Data;
 
 import java.io.BufferedReader;
 import java.io.Closeable;
@@ -29,7 +29,7 @@ import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 
-import lombok.Data;
+import static java.nio.file.FileVisitResult.CONTINUE;
 
 @Data
 public class TestEnviorment implements Closeable
@@ -41,7 +41,7 @@ public class TestEnviorment implements Closeable
     {
         tempDirectory = Files.createTempDirectory("unitTest");
 
-        try (BufferedReader fsDefinition = new BufferedReader(new InputStreamReader(TestEnviorment.class.getResourceAsStream(fsDefinitionFile)));)
+        try (BufferedReader fsDefinition = new BufferedReader(new InputStreamReader(TestEnviorment.class.getResourceAsStream(fsDefinitionFile))))
         {
             String definition;
 
@@ -82,7 +82,7 @@ public class TestEnviorment implements Closeable
     }
 
     @Data
-    static class Item
+    private static class Item
     {
         private final boolean isFile;
         private final long    size;

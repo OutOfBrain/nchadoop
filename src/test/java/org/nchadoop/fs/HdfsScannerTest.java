@@ -1,12 +1,12 @@
 /*******************************************************************************
  * Copyright 2013 Christian Schneider
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,32 +15,27 @@
  ******************************************************************************/
 package org.nchadoop.fs;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import org.apache.hadoop.fs.Path;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.nchadoop.fs.util.TestEnviorment;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
-import org.apache.hadoop.fs.Path;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.nchadoop.fs.Directory;
-import org.nchadoop.fs.HdfsScanner;
-import org.nchadoop.fs.SearchRoot;
-import org.nchadoop.fs.util.TestEnviorment;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 public class HdfsScannerTest
 {
     URI            namenode;
     HdfsScanner    cut;
-    String         pwd;
     SearchRoot     refresh;
     TestEnviorment testFolder;
 
@@ -63,7 +58,7 @@ public class HdfsScannerTest
     }
 
     @Test
-    public void shouldCountAllFiles() throws FileNotFoundException, IOException
+    public void shouldCountAllFiles() throws IOException
     {
         assertThat(this.refresh.getTotalFiles(), is(3L));
     }
@@ -98,7 +93,7 @@ public class HdfsScannerTest
     }
 
     @Test
-    public void shouldStartAtSearchFolderWithoutProtocoll() throws FileNotFoundException, IOException, InterruptedException, URISyntaxException
+    public void shouldStartAtSearchFolderWithoutProtocol() throws IOException, InterruptedException, URISyntaxException
     {
         this.namenode = new URI(this.testFolder.getTempDirectory().toString());
         this.cut = new HdfsScanner(this.namenode, "hdfs");
@@ -135,7 +130,6 @@ public class HdfsScannerTest
         cut.deleteDirectory(directory);
 
         assertThat(refresh.getTotalDiskUsage(), is(oldTotalDiskUsage - directorySize));
-
     }
 
 }

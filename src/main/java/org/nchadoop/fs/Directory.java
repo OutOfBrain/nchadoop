@@ -94,7 +94,7 @@ public class Directory
         adjustSizeRecursive(file.getLen() * -1);
     }
 
-    protected Directory addDirectory(final String name)
+    public Directory addDirectory(final String name)
     {
         final Directory directory = new Directory(this, name);
 
@@ -103,7 +103,7 @@ public class Directory
         return directory;
     }
 
-    protected void addFile(final FileStatus file)
+    public void addFile(final FileStatus file)
     {
         this.files.add(file);
     }
