@@ -23,7 +23,7 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.fs.PathFilter;
 import org.nchadoop.fs.scanstrategy.ScanStrategy;
-import org.nchadoop.fs.scanstrategy.ScanStrategyRecursive;
+import org.nchadoop.fs.scanstrategy.ScanStrategyConcurrent;
 
 import java.io.IOException;
 import java.net.URI;
@@ -56,7 +56,7 @@ public class HdfsScanner
         this.interrupted = false;
 
         final SearchRoot searchRoot = new SearchRoot(searchUri.toString());
-        final ScanStrategy scanStrategy = new ScanStrategyRecursive(this.fileSystem);
+        final ScanStrategy scanStrategy = new ScanStrategyConcurrent(this.fileSystem, 16);
 
 		scanStrategy.walkThroughDirectories(callback, searchRoot, this.fileSystem.listStatus(new Path(searchUri), filter));
 

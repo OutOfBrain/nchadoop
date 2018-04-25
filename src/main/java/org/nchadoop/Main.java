@@ -1,12 +1,12 @@
 /*******************************************************************************
  * Copyright 2013 Christian Schneider
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,9 +15,8 @@
  ******************************************************************************/
 package org.nchadoop;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-
+import com.googlecode.lanterna.TerminalFacade;
+import com.googlecode.lanterna.gui.GUIScreen;
 import org.nchadoop.cli.CliConfig;
 import org.nchadoop.cli.Parser;
 import org.nchadoop.fs.HdfsScanner;
@@ -25,8 +24,8 @@ import org.nchadoop.ui.HelpPopup;
 import org.nchadoop.ui.MainWindow;
 import org.nchadoop.ui.ScanningPopup;
 
-import com.googlecode.lanterna.TerminalFacade;
-import com.googlecode.lanterna.gui.GUIScreen;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class Main
 {
