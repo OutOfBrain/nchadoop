@@ -32,6 +32,8 @@ It scans folders on hdfs and procudes a cli like this:
 License
 =======
 
+    Copyright 2018 Yieldlab AG
+
     Copyright 2013 Christian Schneider
 
     Licensed under the Apache License, Version 2.0 (the "License");
