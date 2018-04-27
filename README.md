@@ -1,9 +1,3 @@
-Project Closed
-======
-
-Currently I have no time to keep it up and running.
-Don't try to run it with the current version of hadoop.
-
 
 About [![Build Status](https://travis-ci.org/d0x/nchadoop.png?branch=master)](https://travis-ci.org/d0x/nchadoop)
 ======
@@ -27,6 +21,8 @@ It scans folders on hdfs and procudes a cli like this:
   216.0KiB [          ]  ParentService.o
    96.0KiB [          ]  proc_types.o
 ```
+
+Latest supported version CDH version: 2.6.0-cdh5.10.1
 
 
 License

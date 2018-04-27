@@ -23,7 +23,7 @@
     <packaging>jar</packaging>
 
     <issueManagement>
-        <url>https://github.com/d0x/nchadoop/issues</url>
+        <url>https://github.com/yieldlab/nchadoop/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
 
@@ -36,27 +36,10 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/d0x/nchadoop/</url>
-        <connection>scm:git:git://github.com/d0x/nchadoop.git</connection>
-        <developerConnection>scm:git:git@github.com:d0x/nchadoop.git</developerConnection>
+        <url>https://github.com/yieldlab/nchadoop/</url>
+        <connection>scm:git:git://github.com/yieldlab/nchadoop.git</connection>
+        <developerConnection>scm:git:git@github.com:yieldlab/nchadoop.git</developerConnection>
     </scm>
-
-    <developers>
-        <developer>
-            <email>cschneiderpublic@gmail.com</email>
-            <name>Christian Schneider</name>
-            <url>https://github.com/d0x</url>
-            <id>d0x</id>
-        </developer>
-    </developers>
-
-    <distributionManagement>
-        <repository>
-            <id>bintray</id>
-            <url>https://api.bintray.com/maven/bintray-user/bintray-repo/package</url>
-        </repository>
-    </distributionManagement>
-
 
     <properties>
         <mainClass>org.nchadoop.Main</mainClass>
